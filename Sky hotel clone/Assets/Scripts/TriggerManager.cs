@@ -19,16 +19,19 @@ public class TriggerManager : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
+		
 		if (other.gameObject.CompareTag(enterTag)) TriggerEnter.Invoke(other);
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
+		
 		if (other.gameObject.CompareTag(stayTag)) TriggerStay.Invoke(other);
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
+		
 		if (other.gameObject.CompareTag(exitTag)) TriggerExit.Invoke(other);
 	}
 }
