@@ -44,6 +44,7 @@
       <Path>Library/PackageCache/com.unity.modules.wind@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.modules.xr@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0</Path>
+      <Path>Library/PackageCache/com.unity.recorder@2.5.7</Path>
       <Path>Library/PackageCache/com.unity.render-pipelines.core@10.8.1</Path>
       <Path>Library/PackageCache/com.unity.render-pipelines.universal@10.8.1</Path>
       <Path>Library/PackageCache/com.unity.searcher@4.3.2</Path>
@@ -58,9 +59,10 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
+      <Path>.vscode</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
-      <Path>Temp</Path>
+      <Path>Recordings</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>

@@ -8,8 +8,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Managers/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Helpers/TriggerEventHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Helpers/GlobalValue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Helpers/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Systems/UnlockingSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -17,6 +21,10 @@
         <option value="$PROJECT_DIR$/Assets/_Game/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Adeel/Helpers/TriggerEventHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/_Adeel/Player/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Adeel/Helpers/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Adeel/Helpers/GlobalValue.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Adeel/Managers/ScoreManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Adeel/Systems/UnlockingSystem.cs" />
       </list>
     </option>
   </component>
