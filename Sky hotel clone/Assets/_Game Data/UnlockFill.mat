@@ -25,7 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _Angle: 90
+    - _Angle: 180
     - _Arc1: 360
     - _Arc2: 0
     m_Colors:
