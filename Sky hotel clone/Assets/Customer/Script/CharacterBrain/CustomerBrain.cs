@@ -84,7 +84,7 @@ namespace Game.Script.CharacterBrain
                     unlockProgressBar.SetActive(false);
 
                     target = destroyZone;
-                    print(waitZone.ReachWaitZone);
+                  // print(waitZone.ReachWaitZone);
 
                     Movement();
                     customerState = CustomerState.Destroy;
@@ -104,7 +104,7 @@ namespace Game.Script.CharacterBrain
         public void FindTarget()
         {
             target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
-            print(target);
+            //print(target);
             //if (_customerManager.customerQueue.ToList().IndexOf(transform.gameObject) == 0 &&
             //    customerState == CustomerState.Ready)
             //{
