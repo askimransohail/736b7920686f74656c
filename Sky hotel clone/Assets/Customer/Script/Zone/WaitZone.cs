@@ -24,17 +24,6 @@ namespace Game.Script.Zone
             if (other.TryGetComponent(out PlayerMovement _))
             {
                 ReachWaitZone = true;
-//                foreach (var s in _customerManager.customerQueue)
-//                {
-//                    Debug.Log(s);
-//;                }
-//                Debug.Log("First" + _customerManager.customerQueue.Peek());
-//                _customerManager.customerQueue.Dequeue();
-//                foreach (var s in _customerManager.customerQueue)
-//                {
-//                    Debug.Log("After Dequeue"+s);
-                    
-//                }
 
             }
         }

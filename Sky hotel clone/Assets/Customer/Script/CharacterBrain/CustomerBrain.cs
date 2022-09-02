@@ -82,6 +82,7 @@ namespace Game.Script.CharacterBrain
 
                 case CustomerState.Collect:
                     unlockProgressBar.SetActive(false);
+                    StartCoroutine(Dollar.ins.MakeMoney());
 
                     target = destroyZone;
                   // print(waitZone.ReachWaitZone);
