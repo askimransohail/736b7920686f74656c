@@ -28,11 +28,13 @@ public class Dollar : MonoBehaviour
         
         yield return new WaitForSecondsRealtime(2);
 
-            Transform DollarPosition = DollarPlace.GetChild(DollarPlaceIndex);
-        GameObject NewDollar = Instantiate(dollar);
-        NewDollar.transform.position = DollarPosition.transform.position;
-        NewDollar.transform.rotation = DollarPosition.transform.rotation;
-
+        //Transform DollarPosition = DollarPlace.GetChild(DollarPlaceIndex);
+        //GameObject NewDollar = Instantiate(dollar);
+        ////NewDollar.transform.position = DollarPosition.transform.position;
+        ////NewDollar.transform.rotation = DollarPosition.transform.rotation;
+        GameObject NewDollar = Instantiate(dollar, new Vector3(DollarPlace.GetChild(DollarPlaceIndex).position.x,
+                   YAxis, DollarPlace.GetChild(DollarPlaceIndex).position.z),
+               DollarPlace.GetChild(DollarPlaceIndex).rotation);
         NewDollar.transform.DOScale(new Vector3(15f, 15f, 15f), 1f).SetEase(Ease.OutElastic);
 
             if (DollarPlaceIndex < DollarPlace.childCount - 1)
@@ -42,7 +44,7 @@ public class Dollar : MonoBehaviour
             else
             {
                 DollarPlaceIndex = 0;
-                YAxis += 0.5f;
+                YAxis += .18f;
             }
    
     }

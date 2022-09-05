@@ -15,6 +15,7 @@ using _Adeel.Player;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Adeel.Systems
 {
@@ -30,6 +31,8 @@ namespace _Adeel.Systems
         private bool isUnlocked, isInTrigArea;
 
         [SerializeField] private Collider trigCollider;
+
+        public UnityEvent OnUnlock;
 
         // [Range(0, 1)][SerializeField] private float testProgress;
 
@@ -112,6 +115,8 @@ namespace _Adeel.Systems
             {
                 trigCollider.enabled = false;
             }
+            OnUnlock?.Invoke();
+            RoomManagement.Instance.createRoomList();
         }
 
         public void UnlockItem()
