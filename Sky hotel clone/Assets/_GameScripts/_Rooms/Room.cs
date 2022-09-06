@@ -13,13 +13,17 @@ public enum RoomState
 public class Room : MonoBehaviour
 {
     //[SerializeField]private States[] RoomState;
-    [SerializeField] private RoomState roomState;
+    public RoomState roomState;
+    public Transform customerTarget;
     [SerializeField] private GameObject[] cleanThings;
     [SerializeField] private GameObject[] dirtyThings;
+ 
+
+    bool isClean = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+        updateRoomStates(RoomState.available);
     }
 
     // Update is called once per frame
@@ -29,15 +33,18 @@ public class Room : MonoBehaviour
     }
 
  
-    public void updateRoomStates()
+    public void updateRoomStates(RoomState _roomState)
     {
-        switch (roomState)
+        roomState = _roomState;
+        switch (_roomState)
         {
             case RoomState.available:
-
+                isClean = true; 
+                roomCondition();
                 break;
             case RoomState.dirty:
-
+                isClean = false;
+                roomCondition();
                 break;
             case RoomState.booked:
 
@@ -49,15 +56,19 @@ public class Room : MonoBehaviour
 
     }
 
+    void roomCondition()
+    {
+        foreach (var things in cleanThings)
+        {
+            things.SetActive(isClean);
+        }
+        foreach (var things in dirtyThings)
+        {
+            things.SetActive(!isClean);
+        }
 
+    }
+
+ 
 
 }
-
-//[Serializable]
-//public struct States
-//{
-//    public RoomState room_State;
-//    public GameObject[] cleanThings;
-//    public GameObject[] dirtyThings;
-
-//}

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Section
   - Customer
+  - DestroyZone
+  - Zone
+  - dollar
+  - Sleep
   layers:
   - Default
   - TransparentFX

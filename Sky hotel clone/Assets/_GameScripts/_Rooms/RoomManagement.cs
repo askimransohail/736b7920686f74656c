@@ -17,11 +17,27 @@ public class RoomManagement : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            print(child);
             if (child.gameObject.activeSelf && !roomList.Contains(child.gameObject))
                 roomList.Add(child.gameObject);
         }
     }
+
+    public Transform IsroomAvailable()
+    {
+        foreach (var child in roomList)
+        {
+             if(child.GetComponent<Room>().roomState == RoomState.available)
+                return child.transform;
+            
+        }
+
+        return null;
+
+
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {

@@ -1,13 +1,4 @@
-// _+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
-// <copyright file="PlayerMovement.cs" company="WittySol">
-//   Copyright (c) 2022 WittySol. All rights reserved.
-// </copyright>
 
-// <author>
-//   Adeel Riaz
-//   adeelwitty@gmail.com
-// </author>
-// _+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
 
 using UnityEngine;
 

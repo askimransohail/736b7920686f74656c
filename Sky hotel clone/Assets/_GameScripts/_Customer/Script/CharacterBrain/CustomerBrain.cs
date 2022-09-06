@@ -11,6 +11,7 @@ namespace Game.Script.CharacterBrain
         Ready,
         Wait,
         Collect,
+        Sleep,
         Destroy
     }
 
@@ -20,11 +21,12 @@ namespace Game.Script.CharacterBrain
         public CustomerState customerState;
         public Transform destroyZone;
         private CustomerManager _customerManager;
-        [SerializeField] private WaitZone waitZone;
+        [SerializeField] private ReceptionZone receptionZone;
         private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
         [SerializeField] private SpriteRenderer progressBar;
         [SerializeField] private GameObject unlockProgressBar;
-
+        private Transform RoomInstance;
+        private bool IsroomAloted = false;
 
 
         #region Unity Lifecycle
@@ -36,7 +38,7 @@ namespace Game.Script.CharacterBrain
             print(parent.parent.GetComponentInChildren<CustomerManager>());
             customerState = CustomerState.Bring;
             destroyZone = GameObject.FindGameObjectWithTag("DestroyZone").transform;
-            waitZone = transform.root.GetComponentInChildren<WaitZone>();
+            receptionZone = transform.root.GetComponentInChildren<ReceptionZone>();
         }
 
         protected new void Start()
@@ -50,9 +52,7 @@ namespace Game.Script.CharacterBrain
         private bool IsDestinationReach()
         {
 
-           
             float distanceToTarget = Vector3.Distance(transform.position, NavMeshAgent.destination);
-
             if (distanceToTarget < NavMeshAgent.stoppingDistance)
             {
                 return false;
@@ -71,48 +71,41 @@ namespace Game.Script.CharacterBrain
 
                 case CustomerState.Wait when _customerManager.customerQueue.ToList().IndexOf(transform.gameObject) == 0:
                     target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
+                    print(this.gameObject);
                     Movement();
-                    Invoke("ChangrState",2f);
+                    customerState = CustomerState.Ready;
+
                     break;
 
-                case CustomerState.Ready when waitZone.ReachWaitZone:
+                case CustomerState.Ready when IsroomAloted:
                     unlockProgressBar.SetActive(true);
                     UnlockProgress();
                     break;
 
                 case CustomerState.Collect:
                     unlockProgressBar.SetActive(false);
-                    StartCoroutine(Dollar.ins.MakeMoney());
-
-                    target = destroyZone;
-                  // print(waitZone.ReachWaitZone);
-
                     Movement();
-                    customerState = CustomerState.Destroy;
-                    _customerManager.customerQueue.Dequeue();
+                    break;
+                case CustomerState.Sleep:
+                  
+                    Invoke("ChangrState",2f);
                     break;
                 case CustomerState.Destroy:
+                    Movement();
                     break;
             }
         }
 
         void ChangrState()
         {
-            if(!IsDestinationReach())
-            customerState = CustomerState.Ready;
-
+            target = destroyZone;
+            customerState = CustomerState.Destroy;
+            RoomInstance.GetComponent<Room>().updateRoomStates(RoomState.dirty);
         }
         public void FindTarget()
         {
             target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
-            //print(target);
-            //if (_customerManager.customerQueue.ToList().IndexOf(transform.gameObject) == 0 &&
-            //    customerState == CustomerState.Ready)
-            //{
-            //    //customerState = CustomerState.Collect;
-            //    UnlockProgress();
-
-            //}
+          
             Movement();
         }
 
@@ -137,6 +130,7 @@ namespace Game.Script.CharacterBrain
 
         public override void Movement()
         {
+            //print(target);
             NavMeshAgent.SetDestination(target.position);
         }
 
@@ -147,9 +141,29 @@ namespace Game.Script.CharacterBrain
             {
                 progress += 2f * Time.deltaTime;
                 progressBar.material.SetFloat(Arc1, 360f - progress * 360f);
-            } 
+            }
             else
+            {
+                StartCoroutine(Dollar.ins.MakeMoney());
                 customerState = CustomerState.Collect;
+                _customerManager.customerQueue.Dequeue();
+            }
+
+        }
+        public void roomAloted(Transform room)
+        {
+            RoomInstance = room;
+            target = RoomInstance.GetComponent<Room>().customerTarget;
+            IsroomAloted = true;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag=="Sleep")
+            {
+             customerState = CustomerState.Sleep;
+
+            }
 
         }
     }

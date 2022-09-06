@@ -23,12 +23,7 @@ Destroy(other.gameObject);
 
         private void OnTriggerExit(Collider other)
         {
-            //if (other.TryGetComponent(out PlayerMovement _) )
-            //{
-            //    ReachWaitZone = false;
-            //    print(ReachWaitZone);
-
-            //}
+       
         }
     }
 }
