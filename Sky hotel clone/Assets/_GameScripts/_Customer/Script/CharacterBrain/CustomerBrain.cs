@@ -2,6 +2,7 @@ using System.Linq;
 using Game.Script.CharacterBase;
 using Game.Script.Zone;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Game.Script.CharacterBrain
 {
@@ -25,10 +26,9 @@ namespace Game.Script.CharacterBrain
         private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
         [SerializeField] private SpriteRenderer progressBar;
         [SerializeField] private GameObject unlockProgressBar;
-        private Transform RoomInstance;
+        private Room RoomInstance;
         private bool IsroomAloted = false;
-
-
+        bool standUp = false;
         #region Unity Lifecycle
 
         private void Awake()
@@ -74,7 +74,6 @@ namespace Game.Script.CharacterBrain
                     print(this.gameObject);
                     Movement();
                     customerState = CustomerState.Ready;
-
                     break;
 
                 case CustomerState.Ready when IsroomAloted:
@@ -87,20 +86,27 @@ namespace Game.Script.CharacterBrain
                     Movement();
                     break;
                 case CustomerState.Sleep:
-                  
-                    Invoke("ChangrState",2f);
+                   ChangeState();
                     break;
                 case CustomerState.Destroy:
-                    Movement();
+                            Movement();
                     break;
             }
         }
 
-        void ChangrState()
+        Tween revAnim;
+
+        void ChangeState()
         {
-            target = destroyZone;
-            customerState = CustomerState.Destroy;
+            transform.DOMove(RoomInstance.customerTarget.position, 1f).OnComplete(() =>
+            {
             RoomInstance.GetComponent<Room>().updateRoomStates(RoomState.dirty);
+            customerState = CustomerState.Destroy;
+                target = destroyZone;
+                print(target);
+            });
+                     //Animator.SetFloat("Velocity", 0);
+
         }
         public void FindTarget()
         {
@@ -125,7 +131,9 @@ namespace Game.Script.CharacterBrain
             
             IsDestinationReach();
             CheckCustomerSituation();
+           if(customerState != CustomerState.Sleep)
             Animator.SetFloat("Velocity", NavMeshAgent.velocity.magnitude);
+
         }
 
         public override void Movement()
@@ -152,8 +160,8 @@ namespace Game.Script.CharacterBrain
         }
         public void roomAloted(Transform room)
         {
-            RoomInstance = room;
-            target = RoomInstance.GetComponent<Room>().customerTarget;
+            RoomInstance = room.GetComponent<Room>();
+            target = RoomInstance.customerTarget;
             IsroomAloted = true;
         }
 
@@ -161,8 +169,13 @@ namespace Game.Script.CharacterBrain
         {
             if (other.gameObject.tag=="Sleep")
             {
-             customerState = CustomerState.Sleep;
-
+                other.GetComponent<BoxCollider>().enabled = false;
+                transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
+                {
+                    Animator.SetFloat("Velocity", -1);
+                    target=null;
+                    customerState = CustomerState.Sleep;
+                });
             }
 
         }

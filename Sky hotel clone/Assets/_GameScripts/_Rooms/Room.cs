@@ -15,9 +15,11 @@ public class Room : MonoBehaviour
     //[SerializeField]private States[] RoomState;
     public RoomState roomState;
     public Transform customerTarget;
+    public Transform sleepTarget;
     [SerializeField] private GameObject[] cleanThings;
     [SerializeField] private GameObject[] dirtyThings;
- 
+
+     int count=0;
 
     bool isClean = true;
     // Start is called before the first frame update
@@ -52,8 +54,6 @@ public class Room : MonoBehaviour
             
 
         }
-
-
     }
 
     void roomCondition()
@@ -69,6 +69,17 @@ public class Room : MonoBehaviour
 
     }
 
- 
+ public void checkRoomCondition()
+    {
+        count++;
+        if (count == cleanThings.Length)
+        {
+            print(count);
+            updateRoomStates(RoomState.available);
+            count = 0;
+        }
+        
+
+    }
 
 }

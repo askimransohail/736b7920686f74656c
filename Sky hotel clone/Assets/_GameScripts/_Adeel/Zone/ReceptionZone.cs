@@ -23,13 +23,13 @@ namespace Game.Script.Zone
             if (other.TryGetComponent(out PlayerMovement _))
             {
                 isPlayerInReceptionZone = true;
-                print("PlayerInReceptionZone " + isPlayerInReceptionZone);
+               // print("PlayerInReceptionZone " + isPlayerInReceptionZone);
          
             }
             if (other.TryGetComponent(out CustomerBrain _))
             {
                 isCustomerInReceptionZone = true;
-                print("CustomerInReceptionZone " + isCustomerInReceptionZone);
+               // print("CustomerInReceptionZone " + isCustomerInReceptionZone);
               
             }
         }
