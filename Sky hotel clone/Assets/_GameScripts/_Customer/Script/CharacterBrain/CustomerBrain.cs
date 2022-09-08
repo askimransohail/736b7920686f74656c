@@ -86,7 +86,12 @@ namespace Game.Script.CharacterBrain
                     Movement();
                     break;
                 case CustomerState.Sleep:
-                   ChangeState();
+                    transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
+                    {
+                        Animator.SetFloat("Velocity", -1);
+                       // target = RoomInstance.sleepTarget;
+                     ChangeState();
+                    });
                     break;
                 case CustomerState.Destroy:
                             Movement();
@@ -138,8 +143,8 @@ namespace Game.Script.CharacterBrain
 
         public override void Movement()
         {
-            //print(target);
-            NavMeshAgent.SetDestination(target.position);
+            //if (customerState != CustomerState.Sleep)
+                NavMeshAgent.SetDestination(target.position);
         }
 
         float progress = 0f;
@@ -170,12 +175,8 @@ namespace Game.Script.CharacterBrain
             if (other.gameObject.tag=="Sleep")
             {
                 other.GetComponent<BoxCollider>().enabled = false;
-                transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
-                {
-                    Animator.SetFloat("Velocity", -1);
-                    target=null;
                     customerState = CustomerState.Sleep;
-                });
+            
             }
 
         }
