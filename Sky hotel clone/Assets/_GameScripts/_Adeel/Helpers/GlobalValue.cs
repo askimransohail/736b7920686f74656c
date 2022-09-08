@@ -8,7 +8,7 @@ namespace _Adeel.Helpers
     
         public static int TotalScore
         {
-            get => PlayerPrefs.GetInt(Score); 
+            get => PlayerPrefs.GetInt(Score, 60); 
             set => PlayerPrefs.SetInt(Score, value); 
         }
     }

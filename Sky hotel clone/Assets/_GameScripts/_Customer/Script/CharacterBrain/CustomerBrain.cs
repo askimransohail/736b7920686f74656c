@@ -3,6 +3,7 @@ using Game.Script.CharacterBase;
 using Game.Script.Zone;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.AI;
 
 namespace Game.Script.CharacterBrain
 {
@@ -13,7 +14,8 @@ namespace Game.Script.CharacterBrain
         Wait,
         Collect,
         Sleep,
-        Destroy
+        Destroy,
+        Nothing
     }
 
     public class CustomerBrain : CharacterBrainBase
@@ -28,7 +30,7 @@ namespace Game.Script.CharacterBrain
         [SerializeField] private GameObject unlockProgressBar;
         private Room RoomInstance;
         private bool IsroomAloted = false;
-        bool standUp = false;
+        bool AnimComplete = true;
         #region Unity Lifecycle
 
         private void Awake()
@@ -63,54 +65,67 @@ namespace Game.Script.CharacterBrain
 
         void CheckCustomerSituation()
         {
-            switch (customerState)
-            {
-                case CustomerState.Bring when !IsDestinationReach():
-                    customerState = CustomerState.Wait;
-                    break;
+          
+                switch (customerState)
+                {
+                    case CustomerState.Bring when !IsDestinationReach():
+                        customerState = CustomerState.Wait;
+                        break;
 
-                case CustomerState.Wait when _customerManager.customerQueue.ToList().IndexOf(transform.gameObject) == 0:
-                    target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
-                    print(this.gameObject);
-                    Movement();
-                    customerState = CustomerState.Ready;
-                    break;
+                    case CustomerState.Wait when _customerManager.customerQueue.ToList().IndexOf(transform.gameObject) == 0:
+                        target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
+                        print(this.gameObject);
+                        Movement();
+                        customerState = CustomerState.Ready;
+                        break;
 
-                case CustomerState.Ready when IsroomAloted:
-                    unlockProgressBar.SetActive(true);
-                    UnlockProgress();
-                    break;
+                    case CustomerState.Ready when IsroomAloted:
+                        unlockProgressBar.SetActive(true);
+                        UnlockProgress();
+                        break;
 
-                case CustomerState.Collect:
-                    unlockProgressBar.SetActive(false);
-                    Movement();
-                    break;
-                case CustomerState.Sleep:
-                    transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
-                    {
-                        Animator.SetFloat("Velocity", -1);
-                       // target = RoomInstance.sleepTarget;
-                     ChangeState();
-                    });
-                    break;
-                case CustomerState.Destroy:
-                            Movement();
-                    break;
-            }
+                    case CustomerState.Collect:
+                        unlockProgressBar.SetActive(false);
+                        Movement();
+                        break;
+                    case CustomerState.Sleep:
+                   
+                        transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
+                            {
+                                
+                                if (AnimComplete)
+                                {
+                                    Animator.SetBool("sleep", true);
+                                    AnimComplete = false;
+                                    Invoke("ChangeState", 4f);
+                                }
+
+                            });
+                    
+                        break;
+                    case CustomerState.Destroy:
+                        Movement();
+                        break;
+                }
+            
         }
 
         Tween revAnim;
 
         void ChangeState()
         {
+                    customerState = CustomerState.Nothing;
+            Animator.SetBool("sleep", false);
+
             transform.DOMove(RoomInstance.customerTarget.position, 1f).OnComplete(() =>
             {
-            RoomInstance.GetComponent<Room>().updateRoomStates(RoomState.dirty);
-            customerState = CustomerState.Destroy;
+                RoomInstance.GetComponent<Room>().updateRoomStates(RoomState.dirty);
+                customerState = CustomerState.Destroy;
                 target = destroyZone;
-                print(target);
+
+                //print(target);
             });
-                     //Animator.SetFloat("Velocity", 0);
+            //Animator.SetFloat("Velocity", 0);
 
         }
         public void FindTarget()
@@ -143,7 +158,7 @@ namespace Game.Script.CharacterBrain
 
         public override void Movement()
         {
-            //if (customerState != CustomerState.Sleep)
+            if (customerState != CustomerState.Sleep)
                 NavMeshAgent.SetDestination(target.position);
         }
 
@@ -176,7 +191,9 @@ namespace Game.Script.CharacterBrain
             {
                 other.GetComponent<BoxCollider>().enabled = false;
                     customerState = CustomerState.Sleep;
-            
+                target = null;
+                RoomInstance.updateRoomStates(RoomState.Occupied);
+              
             }
 
         }

@@ -59,7 +59,7 @@ namespace _Adeel.Managers
              txtScore.text = score.ToString();
         }
 
-        public void AddScore(Vector3 collectPoint)
+        public void AddScore(Vector3 collectPoint, int amount)
         {
             Vector3 gemSpawnPos = cam.WorldToScreenPoint(collectPoint);
             GameObject gem = LeanPool.Spawn(gemPrefab, gemSpawnPos, Quaternion.identity, gemContainer);
@@ -67,7 +67,7 @@ namespace _Adeel.Managers
             {
                 imgGem.DOScale(0.1f, 0.075f).SetRelative(true).OnComplete(() => DOTween.Rewind(imgGem));
                 LeanPool.Despawn(gem, 0.1f);
-                Score++;
+                Score += amount;
             });
         }
     }

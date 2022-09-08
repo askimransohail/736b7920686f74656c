@@ -7,7 +7,8 @@ public enum RoomState
 {
     available,
     dirty,
-    booked
+    booked,
+    Occupied
 }
 
 public class Room : MonoBehaviour
@@ -16,8 +17,7 @@ public class Room : MonoBehaviour
     public RoomState roomState;
     public Transform customerTarget;
     public Transform sleepTarget;
-    [SerializeField] private GameObject[] cleanThings;
-    [SerializeField] private GameObject[] dirtyThings;
+    [SerializeField] private GameObject[] cleanThings, dirtyThings, occupy;
 
      int count=0;
 
@@ -46,12 +46,27 @@ public class Room : MonoBehaviour
                 break;
             case RoomState.dirty:
                 isClean = false;
+                HandleRoomOccupy();
+
                 roomCondition();
                 break;
             case RoomState.booked:
-
                 break;
-            
+            case RoomState.Occupied:
+                HandleRoomOccupy();
+                break;
+        }
+    }
+
+    private void HandleRoomOccupy()
+    {
+        for (int i = 0; i < occupy.Length; i++)
+        {
+            if(roomState==RoomState.Occupied)
+            occupy[i].SetActive(true);
+            else
+                occupy[i].SetActive(false);
+
 
         }
     }
@@ -66,7 +81,6 @@ public class Room : MonoBehaviour
         {
             things.SetActive(!isClean);
         }
-
     }
 
  public void checkRoomCondition()
