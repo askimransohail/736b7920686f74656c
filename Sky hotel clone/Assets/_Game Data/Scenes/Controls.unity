@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4497732, g: 0.49984193, b: 0.5756138, a: 1}
+  m_IndirectSpecularColor: {r: 0.44977325, g: 0.49984187, b: 0.57561356, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4973,6 +4973,7 @@ GameObject:
   - component: {fileID: 3220456569832148023}
   - component: {fileID: 3176262883854525817}
   - component: {fileID: 7899315304297491750}
+  - component: {fileID: 369892281593769880}
   m_Layer: 0
   m_Name: Wall_07
   m_TagString: Untagged
@@ -4980,6 +4981,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &369892281593769880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369892281593769879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783546, y: 0.22900043, z: 3.0480018}
+  m_Center: {x: -0.00000036334984, y: 0.114502005, z: 1.5240006}
 --- !u!4 &371669676313006417
 Transform:
   m_ObjectHideFlags: 0
@@ -5785,6 +5799,7 @@ GameObject:
   - component: {fileID: 692096254835728509}
   - component: {fileID: 8230767281092920626}
   - component: {fileID: 4301036147602014534}
+  - component: {fileID: 1012644201799520389}
   m_Layer: 0
   m_Name: Wall_off_03
   m_TagString: Untagged
@@ -5792,6 +5807,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &1012644201799520389
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012644201799520388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783546, y: 0.22900043, z: 3.0480018}
+  m_Center: {x: 0.0000019016267, y: 0.11449986, z: 1.5239972}
 --- !u!33 &1012931715219043421
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6255,6 +6283,7 @@ GameObject:
   - component: {fileID: 945076979601705868}
   - component: {fileID: 8018547540266179522}
   - component: {fileID: 8205261495779651133}
+  - component: {fileID: 1640568774017439738}
   m_Layer: 0
   m_Name: FloorWoodB_09
   m_TagString: Untagged
@@ -6262,6 +6291,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &1640568774017439738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640568774017439737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: -0.000000074505806, y: -0.00000035762756, z: -0.0000010608035}
 --- !u!33 &1673649908799321425
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6384,6 +6426,7 @@ GameObject:
   - component: {fileID: 5160992882272616392}
   - component: {fileID: 107988153842930545}
   - component: {fileID: 8945489367334552562}
+  - component: {fileID: 1847345624683273651}
   m_Layer: 0
   m_Name: Wall_022
   m_TagString: Untagged
@@ -6391,6 +6434,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &1847345624683273651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847345624683273650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7442436, y: 0.22900052, z: 3.0480022}
+  m_Center: {x: -1.0196507, y: 0.114505775, z: 1.5239999}
 --- !u!1 &1851036546591054068
 GameObject:
   m_ObjectHideFlags: 0
@@ -6402,6 +6458,7 @@ GameObject:
   - component: {fileID: 1499930684565571460}
   - component: {fileID: 2902079342116370515}
   - component: {fileID: 561620166210257580}
+  - component: {fileID: 1851036546591054069}
   m_Layer: 0
   m_Name: Wall_off_05
   m_TagString: Untagged
@@ -6409,6 +6466,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &1851036546591054069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851036546591054068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783546, y: 0.22900043, z: 3.0480018}
+  m_Center: {x: 0.000005716324, y: 0.1145001, z: 1.523996}
 --- !u!4 &1889410827822602603
 Transform:
   m_ObjectHideFlags: 0
@@ -6605,6 +6675,7 @@ GameObject:
   - component: {fileID: 6188194163216759688}
   - component: {fileID: 353008061964384065}
   - component: {fileID: 2673545995969309722}
+  - component: {fileID: 2179168630248232671}
   m_Layer: 0
   m_Name: Wall_11
   m_TagString: Untagged
@@ -6612,6 +6683,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2179168630248232671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179168630248232670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783547, y: 0.22900115, z: 3.0480006}
+  m_Center: {x: -0.0000015497205, y: 0.114499725, z: 1.523999}
 --- !u!1 &2179443574768035665
 GameObject:
   m_ObjectHideFlags: 0
@@ -7013,6 +7097,7 @@ GameObject:
   - component: {fileID: 8883273759801081832}
   - component: {fileID: 7130735124283850292}
   - component: {fileID: 986459422036835924}
+  - component: {fileID: 2498078616070873843}
   m_Layer: 0
   m_Name: Wall_021
   m_TagString: Untagged
@@ -7020,6 +7105,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &2498078616070873843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2498078616070873842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783547, y: 0.22900115, z: 3.0480006}
+  m_Center: {x: 0.000004172325, y: 0.1144995, z: 1.5240006}
 --- !u!23 &2518200525886871864
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7143,6 +7241,7 @@ GameObject:
   - component: {fileID: 4558675079274229795}
   - component: {fileID: 4734522637331554601}
   - component: {fileID: 4362877369478911927}
+  - component: {fileID: 2650832552793481889}
   m_Layer: 0
   m_Name: Wall_off_07
   m_TagString: Untagged
@@ -7150,6 +7249,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &2650832552793481889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650832552793481888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783546, y: 0.22900043, z: 3.0480018}
+  m_Center: {x: 0.000005716324, y: 0.11449986, z: 1.5239949}
 --- !u!1 &2652147227731787821
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,6 +7273,7 @@ GameObject:
   - component: {fileID: 1274661345192395520}
   - component: {fileID: 1918331468531523113}
   - component: {fileID: 377751186363449461}
+  - component: {fileID: 2652147227731787822}
   m_Layer: 0
   m_Name: Wall_09
   m_TagString: Untagged
@@ -7168,6 +7281,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2652147227731787822
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652147227731787821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783548, y: 0.22900052, z: 3.0480018}
+  m_Center: {x: 0.0000011978152, y: 0.11450205, z: 1.5240006}
 --- !u!33 &2661053584001450496
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7430,6 +7556,7 @@ GameObject:
   - component: {fileID: 482642070148931621}
   - component: {fileID: 6527840284654162301}
   - component: {fileID: 2396129823087494100}
+  - component: {fileID: 2964845672702674099}
   m_Layer: 0
   m_Name: Wall_05
   m_TagString: Untagged
@@ -7437,6 +7564,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2964845672702674099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964845672702674098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783547, y: 0.2290015, z: 3.0480015}
+  m_Center: {x: 0.0000010680243, y: 0.11450178, z: 1.5240016}
 --- !u!1 &3017231740312432536
 GameObject:
   m_ObjectHideFlags: 0
@@ -7492,6 +7632,7 @@ GameObject:
   - component: {fileID: 5430099715104985677}
   - component: {fileID: 829301989126594028}
   - component: {fileID: 7988735047145447426}
+  - component: {fileID: 3090197398772232327}
   m_Layer: 0
   m_Name: FloorWoodB_03
   m_TagString: Untagged
@@ -7499,6 +7640,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &3090197398772232327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090197398772232326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: -0.000000029802322, y: 0.0000038146977, z: -0.0000056227473}
 --- !u!23 &3091299826103388058
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7740,6 +7894,7 @@ GameObject:
   - component: {fileID: 5872116912965821129}
   - component: {fileID: 8263404793228252175}
   - component: {fileID: 3431656299140112436}
+  - component: {fileID: 3187678732206148343}
   m_Layer: 0
   m_Name: Wall_off_02
   m_TagString: Untagged
@@ -7747,6 +7902,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &3187678732206148343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187678732206148342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783548, y: 0.22900052, z: 3.0480018}
+  m_Center: {x: -0.0000011863706, y: 0.11450014, z: 1.5239983}
 --- !u!4 &3220456569832148023
 Transform:
   m_ObjectHideFlags: 0
@@ -8214,6 +8382,7 @@ GameObject:
   - component: {fileID: 1610418844403239092}
   - component: {fileID: 1473722049212079132}
   - component: {fileID: 3156089755877042873}
+  - component: {fileID: 3648324796280000273}
   m_Layer: 0
   m_Name: Wall_030
   m_TagString: Untagged
@@ -8221,6 +8390,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &3648324796280000273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648324796280000272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783548, y: 0.22900052, z: 3.0480018}
+  m_Center: {x: 0.0000011978152, y: 0.11450253, z: 1.5240006}
 --- !u!33 &3656975837919990898
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9367,6 +9549,7 @@ GameObject:
   - component: {fileID: 3334004131057257730}
   - component: {fileID: 251555494372526120}
   - component: {fileID: 7412968531392354665}
+  - component: {fileID: 4293647866210977005}
   m_Layer: 0
   m_Name: Wall_06
   m_TagString: Untagged
@@ -9374,6 +9557,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4293647866210977005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293647866210977004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783546, y: 0.22900043, z: 3.0480018}
+  m_Center: {x: 0.00000094795234, y: 0.114502005, z: 1.5239995}
 --- !u!4 &4297693019699366388
 Transform:
   m_ObjectHideFlags: 0
@@ -9549,6 +9745,7 @@ GameObject:
   - component: {fileID: 8357102377540361031}
   - component: {fileID: 7952629568090530615}
   - component: {fileID: 2316560789465839206}
+  - component: {fileID: 4399152067870397789}
   m_Layer: 0
   m_Name: FloorWoodB_01
   m_TagString: Untagged
@@ -9556,6 +9753,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &4399152067870397789
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399152067870397788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: -0.000000014901161, y: 0.0000019073489, z: -0.000003341775}
 --- !u!23 &4405262377299144817
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9754,6 +9964,7 @@ GameObject:
   - component: {fileID: 979632498155311784}
   - component: {fileID: 7747922677639808262}
   - component: {fileID: 2265173165927303418}
+  - component: {fileID: 4538415085232656347}
   m_Layer: 0
   m_Name: FloorWoodB_02
   m_TagString: Untagged
@@ -9761,6 +9972,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &4538415085232656347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538415085232656346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: -0.000000029802322, y: 0.0000028610232, z: -0.000004482261}
 --- !u!4 &4554775269306144843
 Transform:
   m_ObjectHideFlags: 0
@@ -10290,6 +10514,7 @@ GameObject:
   - component: {fileID: 6475408695423574356}
   - component: {fileID: 7954866629254090146}
   - component: {fileID: 7098630172597425550}
+  - component: {fileID: 5122619120541476762}
   m_Layer: 0
   m_Name: Wall_off_01
   m_TagString: Untagged
@@ -10297,6 +10522,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &5122619120541476762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122619120541476761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783546, y: 0.22900043, z: 3.0480018}
+  m_Center: {x: 0.0000028553009, y: 0.11449962, z: 1.5239983}
 --- !u!4 &5126274613848057475
 Transform:
   m_ObjectHideFlags: 0
@@ -10586,6 +10824,7 @@ GameObject:
   - component: {fileID: 510552453667088767}
   - component: {fileID: 6732434856947255011}
   - component: {fileID: 2221380765157730406}
+  - component: {fileID: 5428909521290548601}
   m_Layer: 0
   m_Name: Wall_off_06
   m_TagString: Untagged
@@ -10593,6 +10832,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &5428909521290548601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428909521290548600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783548, y: 0.22900052, z: 3.0480018}
+  m_Center: {x: -0.0000050010676, y: 0.11450014, z: 1.523996}
 --- !u!4 &5430099715104985677
 Transform:
   m_ObjectHideFlags: 0
@@ -10634,6 +10886,7 @@ GameObject:
   - component: {fileID: 1961808062887626424}
   - component: {fileID: 7224089344900778239}
   - component: {fileID: 9025959685688960888}
+  - component: {fileID: 5529592578717191589}
   m_Layer: 0
   m_Name: FloorWoodB_05
   m_TagString: Untagged
@@ -10641,6 +10894,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &5529592578717191589
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529592578717191588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: 0.0000023841858, y: 0.0000009536747, z: -0.0000022012896}
 --- !u!1 &5552250721985609463
 GameObject:
   m_ObjectHideFlags: 0
@@ -10797,6 +11063,7 @@ GameObject:
   - component: {fileID: 3626066412906673967}
   - component: {fileID: 365672774474352377}
   - component: {fileID: 7775981482223196665}
+  - component: {fileID: 5808701785067931829}
   m_Layer: 0
   m_Name: FloorWoodB_10
   m_TagString: Untagged
@@ -10804,6 +11071,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &5808701785067931829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808701785067931828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: 0.0000023841858, y: -0.00000035762756, z: -0.0000010608038}
 --- !u!33 &5830781538114911304
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11019,6 +11299,7 @@ GameObject:
   - component: {fileID: 6412826615086206455}
   - component: {fileID: 3714112475008818064}
   - component: {fileID: 6996981874110134645}
+  - component: {fileID: 5945542071142392195}
   m_Layer: 0
   m_Name: Wall_off_08
   m_TagString: Untagged
@@ -11026,6 +11307,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &5945542071142392195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5945542071142392194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783548, y: 0.22900052, z: 3.0480018}
+  m_Center: {x: -0.0000069084163, y: 0.11450014, z: 1.5239949}
 --- !u!33 &5948796307596774052
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11101,6 +11395,7 @@ GameObject:
   - component: {fileID: 5098549406742238826}
   - component: {fileID: 3066181789068689791}
   - component: {fileID: 432753972511418544}
+  - component: {fileID: 6069335548194792062}
   m_Layer: 0
   m_Name: FloorWoodB_13
   m_TagString: Untagged
@@ -11108,6 +11403,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &6069335548194792062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069335548194792061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5546594, y: 3.4075491, z: 0.0000011515497}
+  m_Center: {x: 0.17169245, y: 0.68799627, z: -0.00000025391205}
 --- !u!4 &6088560713070300621
 Transform:
   m_ObjectHideFlags: 0
@@ -11231,6 +11539,7 @@ GameObject:
   - component: {fileID: 2633391292055974744}
   - component: {fileID: 94938830014359825}
   - component: {fileID: 8042586800603245819}
+  - component: {fileID: 6281425478100234389}
   m_Layer: 0
   m_Name: Wall_03
   m_TagString: Untagged
@@ -11238,6 +11547,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6281425478100234389
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281425478100234388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4010671, y: 0.22900347, z: 3.048002}
+  m_Center: {x: 0.00000065565064, y: 0.0000016001464, z: 1.5240027}
 --- !u!33 &6286514211341604280
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11508,6 +11830,7 @@ GameObject:
   - component: {fileID: 7403649812172338961}
   - component: {fileID: 5830781538114911304}
   - component: {fileID: 2809971305198811362}
+  - component: {fileID: 6633265160141000515}
   m_Layer: 0
   m_Name: FloorWoodB_11
   m_TagString: Untagged
@@ -11515,6 +11838,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &6633265160141000515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633265160141000514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.898048, y: 3.4075491, z: 0.0000010546564}
+  m_Center: {x: 0.0000020265577, y: 0.68799627, z: 0.000000036767688}
 --- !u!33 &6659502721603519336
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11778,6 +12114,7 @@ GameObject:
   - component: {fileID: 5983119383099948569}
   - component: {fileID: 8825976594353301641}
   - component: {fileID: 5203919087626214701}
+  - component: {fileID: 6927322500673920682}
   m_Layer: 0
   m_Name: Wall_04
   m_TagString: Untagged
@@ -11785,6 +12122,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6927322500673920682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927322500673920681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4010671, y: 0.22900347, z: 3.048002}
+  m_Center: {x: -0.0000022053723, y: 0.0000020769837, z: 1.5240027}
 --- !u!4 &6940397952639038021
 Transform:
   m_ObjectHideFlags: 0
@@ -11818,6 +12168,7 @@ GameObject:
   - component: {fileID: 635832218084685887}
   - component: {fileID: 708929556433239739}
   - component: {fileID: 7670419331993770437}
+  - component: {fileID: 6964710007360036185}
   m_Layer: 0
   m_Name: Wall_019
   m_TagString: Untagged
@@ -11825,6 +12176,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &6964710007360036185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964710007360036184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783547, y: 0.22900115, z: 3.0480006}
+  m_Center: {x: 0.0000051259995, y: 0.114499725, z: 1.523999}
 --- !u!1 &6972914218735171157
 GameObject:
   m_ObjectHideFlags: 0
@@ -11897,6 +12261,7 @@ GameObject:
   - component: {fileID: 371669676313006417}
   - component: {fileID: 8033367023400972223}
   - component: {fileID: 8426798043881569322}
+  - component: {fileID: 7020588960395192353}
   m_Layer: 0
   m_Name: FloorWoodB_12
   m_TagString: Untagged
@@ -11904,6 +12269,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &7020588960395192353
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020588960395192352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 3.4075491, z: 0.00000081242297}
+  m_Center: {x: -0.000000074505806, y: 0.68799627, z: -0.00000008434881}
 --- !u!33 &7032006430107324107
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12297,6 +12675,7 @@ GameObject:
   - component: {fileID: 8226177352222992848}
   - component: {fileID: 8731964911525779519}
   - component: {fileID: 8611846471965131977}
+  - component: {fileID: 7373439037611350439}
   m_Layer: 0
   m_Name: Wall_off_04
   m_TagString: Untagged
@@ -12304,6 +12683,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &7373439037611350439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373439037611350438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783548, y: 0.22900052, z: 3.0480018}
+  m_Center: {x: -0.000002140045, y: 0.11450014, z: 1.5239972}
 --- !u!1 &7377370493261287203
 GameObject:
   m_ObjectHideFlags: 0
@@ -12404,6 +12796,7 @@ GameObject:
   - component: {fileID: 7892568148364017621}
   - component: {fileID: 5948796307596774052}
   - component: {fileID: 9157935347283617566}
+  - component: {fileID: 7443105765675224715}
   m_Layer: 0
   m_Name: Wall_08
   m_TagString: Untagged
@@ -12411,6 +12804,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7443105765675224715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443105765675224714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.7835484, y: 0.2290016, z: 3.0480015}
+  m_Center: {x: -0.0000006439668, y: 0.1145023, z: 1.5240016}
 --- !u!33 &7462812854056972072
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12535,6 +12941,7 @@ GameObject:
   - component: {fileID: 7055335475357619854}
   - component: {fileID: 3222650629834563075}
   - component: {fileID: 2542211738682547395}
+  - component: {fileID: 7487118753075804755}
   m_Layer: 0
   m_Name: FloorWoodB_06
   m_TagString: Untagged
@@ -12542,6 +12949,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &7487118753075804755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487118753075804754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: -0.000000074505806, y: 0.0000009536747, z: -0.0000022012891}
 --- !u!1 &7494475443969224160
 GameObject:
   m_ObjectHideFlags: 0
@@ -12571,6 +12991,7 @@ GameObject:
   - component: {fileID: 5659042580125541913}
   - component: {fileID: 2927678898216243947}
   - component: {fileID: 6256524582080656392}
+  - component: {fileID: 7505105665270973192}
   m_Layer: 0
   m_Name: Wall_036
   m_TagString: Untagged
@@ -12578,6 +12999,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &7505105665270973192
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505105665270973191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2470719526304363331, guid: 8a66c37c6cbdf86438e3d575cae12be7, type: 3}
 --- !u!23 &7514827781186721500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13088,6 +13523,7 @@ GameObject:
   - component: {fileID: 4290242105693397601}
   - component: {fileID: 6945512177153623690}
   - component: {fileID: 8970518437859402132}
+  - component: {fileID: 7874855577729205495}
   m_Layer: 0
   m_Name: Wall_023
   m_TagString: Untagged
@@ -13095,6 +13531,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &7874855577729205495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874855577729205494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783548, y: 0.22900052, z: 3.0480018}
+  m_Center: {x: 0.0000000057223133, y: 0.11450539, z: 1.5239995}
 --- !u!4 &7875522773701724028
 Transform:
   m_ObjectHideFlags: 0
@@ -13226,6 +13675,7 @@ GameObject:
   - component: {fileID: 2372523460181747655}
   - component: {fileID: 9005115201068629933}
   - component: {fileID: 4536667115142212942}
+  - component: {fileID: 7948646934645702530}
   m_Layer: 0
   m_Name: Wall_off_09
   m_TagString: Untagged
@@ -13233,6 +13683,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &7948646934645702530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948646934645702529}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.783547, y: 0.22900115, z: 3.0480006}
+  m_Center: {x: 0.00000038743045, y: 0.114505924, z: 1.5239943}
 --- !u!33 &7952629568090530615
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13675,6 +14138,7 @@ GameObject:
   - component: {fileID: 812900410218004004}
   - component: {fileID: 4971740469119440543}
   - component: {fileID: 1573327981639346980}
+  - component: {fileID: 8235707141344847318}
   m_Layer: 0
   m_Name: FloorWoodB_04
   m_TagString: Untagged
@@ -13682,6 +14146,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &8235707141344847318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235707141344847317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8980474, y: 4.7835445, z: 0.0000011404858}
+  m_Center: {x: -0.000000029802322, y: 0.0000057220464, z: -0.0000067632336}
 --- !u!4 &8235928344148172948
 Transform:
   m_ObjectHideFlags: 0
@@ -13778,6 +14255,7 @@ GameObject:
   - component: {fileID: 7582891236894420210}
   - component: {fileID: 8605972838322379960}
   - component: {fileID: 3737836733303009815}
+  - component: {fileID: 8316596993424241443}
   m_Layer: 0
   m_Name: FloorWoodB_07
   m_TagString: Untagged
@@ -13785,6 +14263,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &8316596993424241443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316596993424241442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.554661, y: 4.783545, z: 0.0000015280592}
+  m_Center: {x: 0.17169102, y: 0.0000011920934, z: -0.000002395076}
 --- !u!33 &8318282904270728920
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14157,6 +14648,7 @@ GameObject:
   - component: {fileID: 7163501083906473504}
   - component: {fileID: 1580853188665533280}
   - component: {fileID: 4186634309829708427}
+  - component: {fileID: 8759785350250069400}
   m_Layer: 0
   m_Name: FloorWoodB_08
   m_TagString: Untagged
@@ -14164,6 +14656,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &8759785350250069400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759785350250069399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.554661, y: 4.783545, z: 0.0000015280592}
+  m_Center: {x: 0.17169102, y: -0.00000011920886, z: -0.0000012545902}
 --- !u!1 &8780621181404511165
 GameObject:
   m_ObjectHideFlags: 0
