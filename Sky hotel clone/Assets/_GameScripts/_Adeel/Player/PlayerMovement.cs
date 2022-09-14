@@ -16,6 +16,8 @@ namespace _Adeel.Player
 
         private Animator animator;
 
+        private Transform camMain;
+
         #region Unity Methods
 
         // Start is called before the first frame update
@@ -45,6 +47,7 @@ namespace _Adeel.Player
             {
                 dynamicJoystick = FindObjectOfType<DynamicJoystick>();
             }
+            camMain = Camera.main.transform;
         }
 
         private void GetInput()
@@ -61,7 +64,7 @@ namespace _Adeel.Player
             smoothInputMagnitude =
                 Mathf.SmoothDamp(smoothInputMagnitude, inputMagnitude, ref smoothMoveVelocity, smoothTime);
 
-            float targetAngle = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + camMain.rotation.y * 90f;
             angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * turnSpeed * inputMagnitude);
             
             animator.SetFloat("MoveSpeed", smoothInputMagnitude);

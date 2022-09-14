@@ -10,6 +10,7 @@ TagManager:
   - Zone
   - dollar
   - Sleep
+  - TissueRack
   layers:
   - Default
   - TransparentFX

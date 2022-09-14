@@ -82,6 +82,7 @@ namespace Game.Script.CharacterBrain
                     case CustomerState.Ready when IsroomAloted:
                         unlockProgressBar.SetActive(true);
                         UnlockProgress();
+                   // IsroomAloted = false;
                         break;
 
                     case CustomerState.Collect:
@@ -190,7 +191,7 @@ namespace Game.Script.CharacterBrain
             if (other.gameObject.tag=="Sleep")
             {
                 other.GetComponent<BoxCollider>().enabled = false;
-                    customerState = CustomerState.Sleep;
+                customerState = CustomerState.Sleep;
                 target = null;
                 RoomInstance.updateRoomStates(RoomState.Occupied);
               
