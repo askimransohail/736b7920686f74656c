@@ -9,9 +9,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Managers/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Zones/DestackingZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Helpers/TriggerEventHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Helpers/GlobalValue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Helpers/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Player/PlayerStacking.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Adeel/Systems/UnlockingSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -22,9 +24,11 @@
         <option value="$PROJECT_DIR$/Assets/_Adeel/Helpers/TriggerEventHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/_Adeel/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Adeel/Helpers/Singleton.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Adeel/Helpers/GlobalValue.cs" />
         <option value="$PROJECT_DIR$/Assets/_Adeel/Managers/ScoreManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Adeel/Systems/UnlockingSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Adeel/Zones/DestackingZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Adeel/Helpers/GlobalValue.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Adeel/Player/PlayerStacking.cs" />
       </list>
     </option>
   </component>
