@@ -40,7 +40,7 @@ namespace Game.Script.CharacterBrain
         {
             var parent = transform.parent;
             _customerManager = parent.parent.GetComponentInChildren<CustomerManager>();
-            print(parent.parent.GetComponentInChildren<CustomerManager>());
+          // print(parent.parent.GetComponentInChildren<CustomerManager>());
             customerState = CustomerState.Bring;
             destroyZone = GameObject.FindGameObjectWithTag("DestroyZone").transform;
             receptionZone = transform.root.GetComponentInChildren<ReceptionZone>();
@@ -77,7 +77,7 @@ namespace Game.Script.CharacterBrain
 
                     case CustomerState.Wait when _customerManager.customerQueue.ToList().IndexOf(transform.gameObject) == 0:
                         target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
-                        print(this.gameObject);
+                      //  print(this.gameObject);
                         Movement();
                         customerState = CustomerState.Ready;
                         break;
@@ -90,7 +90,9 @@ namespace Game.Script.CharacterBrain
 
                     case CustomerState.Collect:
                         unlockProgressBar.SetActive(false);
-                        Movement();
+                    print(target);
+
+                    Movement();
                         break;
                     case CustomerState.Sleep:
                    
