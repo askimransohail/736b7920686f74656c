@@ -14,6 +14,7 @@ namespace Game.Script.CharacterBrain
         Wait,
         Collect,
         Sleep,
+        washroom,
         Destroy,
         Nothing
     }
@@ -29,6 +30,8 @@ namespace Game.Script.CharacterBrain
         [SerializeField] private SpriteRenderer progressBar;
         [SerializeField] private GameObject unlockProgressBar;
         private Room RoomInstance;
+        private Transform ToiletInstance;
+
         private bool IsroomAloted = false;
         bool AnimComplete = true;
         #region Unity Lifecycle
@@ -91,19 +94,12 @@ namespace Game.Script.CharacterBrain
                         break;
                     case CustomerState.Sleep:
                    
-                        transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
-                            {
-                                
-                                if (AnimComplete)
-                                {
-                                    Animator.SetBool("sleep", true);
-                                    AnimComplete = false;
-                                    Invoke("ChangeState", 4f);
-                                }
-
-                            });
+                      SleepTime();
                     
                         break;
+                case CustomerState.washroom:
+                    RefreshTime();
+                    break;
                     case CustomerState.Destroy:
                         Movement();
                         break;
@@ -111,24 +107,55 @@ namespace Game.Script.CharacterBrain
             
         }
 
-        Tween revAnim;
-
-        void ChangeState()
+        void SleepTime()
         {
-                    customerState = CustomerState.Nothing;
+            transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
+            {
+
+                if (AnimComplete)
+                {
+                    Animator.SetBool("sleep", true);
+                    AnimComplete = false;
+                    Invoke("SleepToAwake", 4f);
+                }
+
+            });
+        }
+        void SleepToAwake()
+        {
+            customerState = CustomerState.Nothing;
             Animator.SetBool("sleep", false);
 
             transform.DOMove(RoomInstance.customerTarget.position, 1f).OnComplete(() =>
             {
                 RoomInstance.GetComponent<Room>().updateRoomStates(RoomState.dirty);
-                customerState = CustomerState.Destroy;
-                target = destroyZone;
-
-                //print(target);
+                FindWashroom();
             });
-            //Animator.SetFloat("Velocity", 0);
 
         }
+
+        void RefreshTime()
+        {
+            Movement();
+            if (!IsDestinationReach())
+            {
+                Animator.SetBool("pee", true);
+                customerState = CustomerState.Nothing;
+                GetComponent<Rigidbody>().isKinematic = true;
+                Invoke("BackToHome", 3f);
+            }
+        }
+        void BackToHome()
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+            Animator.SetBool("pee", false);
+            ToiletInstance.GetComponent<Toilets>().updateToiletStates(ToiletState.OutOfService);
+            customerState = CustomerState.Destroy;
+            target = destroyZone;
+
+        }
+
+
         public void FindTarget()
         {
             target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
@@ -184,6 +211,13 @@ namespace Game.Script.CharacterBrain
             RoomInstance = room.GetComponent<Room>();
             target = RoomInstance.customerTarget;
             IsroomAloted = true;
+        }
+
+        public void FindWashroom()
+        {
+            ToiletInstance = WashroomManagement.Ins.IsToiletAvailable();
+            target = ToiletInstance.GetComponent<Toilets>().PeePoint;
+            customerState = CustomerState.washroom;
         }
 
         private void OnTriggerEnter(Collider other)

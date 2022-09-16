@@ -117,6 +117,8 @@ namespace _Adeel.Systems
             }
             OnUnlock?.Invoke();
             RoomManagement.Instance.createRoomList();
+            //WashroomManagement.Ins.createWashroomList();
+
         }
 
         public void UnlockItem()

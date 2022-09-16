@@ -10,7 +10,7 @@ namespace Game.Script.Data
         public int collectCapacity = 10;
         public float collectDuration = 0.5f;
         public float dropDuration = 0.5f;
-        public float movementSpeed = 6;
+        public float movementSpeed = 10;
         public float stoppingDistance;
         public float acceleration;
         public float angularSpeed;

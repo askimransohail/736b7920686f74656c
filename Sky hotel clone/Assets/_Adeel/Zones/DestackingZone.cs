@@ -22,13 +22,13 @@ namespace _Adeel.Zones
         [SerializeField] private DestackType destackType;
         [SerializeField] private float trigStayDelay, destackDelay;
         [SerializeField] private Transform dropPoint;
+        [SerializeField] private GameObject Parent;
 
         private bool canDestack = true;
 
         private bool isInTrigArea;
         private Coroutine destackCoroutine;
         private PlayerStacking playerStacking;
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out playerStacking))
@@ -69,9 +69,14 @@ namespace _Adeel.Zones
                 canDestack = false;
                 DOVirtual.DelayedCall(destackDelay, () => playerStacking.DestackItem(dropPoint));
                 DOVirtual.DelayedCall(10f, () => canDestack = true);
+                Invoke("AfterDestacking",1.5f);
             }
         }
+        void AfterDestacking()
+        {
+            Parent.GetComponent<Toilets>().updateToiletStates(ToiletState.Available);
 
+        }
         private IEnumerator CO_Process()
         {
             while (isInTrigArea)
