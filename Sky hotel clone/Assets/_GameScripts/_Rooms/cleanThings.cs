@@ -12,7 +12,7 @@ public class cleanThings : MonoBehaviour
    // [SerializeField] private GameObject UnlockProgressBarobj;
     [SerializeField] private GameObject roomObject;
     [SerializeField] private UnityEvent OnClean;
-
+    
     float progress = 0f;
     // Start is called before the first frame update
     void Start()
@@ -28,11 +28,11 @@ public class cleanThings : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent(out PlayerMovement _))
+        if (other.TryGetComponent(out PlayerMovement _) || other.TryGetComponent(out WorkerAI _))
         {
             if (progress < 1f)
             {
-                progress += 2f * Time.deltaTime;
+                progress += .5f * Time.deltaTime;
                 progressBar.material.SetFloat(Arc1, 360f - progress * 360f);
             }
             else

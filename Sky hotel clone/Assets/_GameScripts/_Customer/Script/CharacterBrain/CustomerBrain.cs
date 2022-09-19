@@ -34,6 +34,7 @@ namespace Game.Script.CharacterBrain
 
         private bool IsroomAloted = false;
         bool AnimComplete = true;
+        bool sleep = false;
         #region Unity Lifecycle
 
         private void Awake()
@@ -44,6 +45,7 @@ namespace Game.Script.CharacterBrain
             customerState = CustomerState.Bring;
             destroyZone = GameObject.FindGameObjectWithTag("DestroyZone").transform;
             receptionZone = transform.root.GetComponentInChildren<ReceptionZone>();
+            sleep = false;
         }
 
         protected new void Start()
@@ -90,7 +92,7 @@ namespace Game.Script.CharacterBrain
 
                     case CustomerState.Collect:
                         unlockProgressBar.SetActive(false);
-                    print(target);
+                   // print(target);
 
                     Movement();
                         break;
@@ -108,7 +110,7 @@ namespace Game.Script.CharacterBrain
                 }
             
         }
-
+     
         void SleepTime()
         {
             transform.DOMove(RoomInstance.sleepTarget.position, 1f).OnComplete(() =>
@@ -224,15 +226,17 @@ namespace Game.Script.CharacterBrain
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag=="Sleep")
+            if (other.gameObject.tag=="Sleep" && !sleep)
             {
-                other.GetComponent<BoxCollider>().enabled = false;
+               // other.GetComponent<BoxCollider>().enabled = false;
                 customerState = CustomerState.Sleep;
                 target = null;
                 RoomInstance.updateRoomStates(RoomState.Occupied);
-              
+                sleep = true;
             }
 
         }
+
+      
     }
 }

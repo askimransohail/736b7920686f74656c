@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomManagement : MonoBehaviour
 {
 
-    [SerializeField] private List<GameObject> roomList = new List<GameObject>();
+    public  List<GameObject> roomList = new List<GameObject>();
     public static RoomManagement Instance;
     // Start is called before the first frame update
     void Awake()

@@ -17,9 +17,10 @@ public class Room : MonoBehaviour
     public RoomState roomState;
     public Transform customerTarget;
     public Transform sleepTarget;
-    [SerializeField] private GameObject[] cleanThings, dirtyThings, occupy;
-
-     int count=0;
+    public GameObject[] cleanThings, dirtyThings, occupy;
+    [SerializeField] private GameObject Dustbin;
+    public static event Action<GameObject> OnRoomDirty;
+    public  int count=0;
 
     bool isClean = true;
     // Start is called before the first frame update
@@ -47,8 +48,8 @@ public class Room : MonoBehaviour
             case RoomState.dirty:
                 isClean = false;
                 HandleRoomOccupy();
-
                 roomCondition();
+                OnRoomDirty?.Invoke(gameObject);
                 break;
             case RoomState.booked:
                 break;
@@ -76,10 +77,13 @@ public class Room : MonoBehaviour
         foreach (var things in cleanThings)
         {
             things.SetActive(isClean);
+            Dustbin.SetActive(isClean);
         }
         foreach (var things in dirtyThings)
         {
             things.SetActive(!isClean);
+            Dustbin.SetActive(!isClean);
+
         }
     }
 
@@ -93,7 +97,8 @@ public class Room : MonoBehaviour
             count = 0;
         }
         
-
     }
+
+
 
 }
