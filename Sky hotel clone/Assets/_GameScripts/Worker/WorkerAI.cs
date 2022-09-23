@@ -76,6 +76,8 @@ public class WorkerAI : Singleton<WorkerAI>
         if (WorkerAIList.Count != 0)
         {
             target = WorkerAIList[0].GetComponent<Room>().dirtyThings[WorkerAIList[0].GetComponent<Room>().count].transform;
+            print(target);
+
         }
 
 
@@ -100,7 +102,6 @@ public class WorkerAI : Singleton<WorkerAI>
         {
             UpdateWorkerStates(WorkerState.Free);
         }
-        print(target);
     }
 
     private void AddWorkingList(GameObject obj)

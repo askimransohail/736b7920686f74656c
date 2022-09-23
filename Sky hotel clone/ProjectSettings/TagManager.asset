@@ -12,6 +12,7 @@ TagManager:
   - Sleep
   - TissueRack
   - Destack
+  - Reception
   layers:
   - Default
   - TransparentFX

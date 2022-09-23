@@ -20,7 +20,7 @@ namespace Game.Script.Zone
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out PlayerMovement _))
+            if (other.TryGetComponent(out PlayerMovement _) || other.gameObject.tag=="Reception")
             {
                 isPlayerInReceptionZone = true;
          

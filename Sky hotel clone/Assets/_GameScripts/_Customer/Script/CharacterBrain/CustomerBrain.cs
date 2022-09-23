@@ -81,7 +81,8 @@ namespace Game.Script.CharacterBrain
                         target = _customerManager.slots[_customerManager.customerQueue.ToList().IndexOf(transform.gameObject)];
                       //  print(this.gameObject);
                         Movement();
-                        customerState = CustomerState.Ready;
+                    gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+                    customerState = CustomerState.Ready;
                         break;
 
                     case CustomerState.Ready when IsroomAloted:
@@ -92,7 +93,7 @@ namespace Game.Script.CharacterBrain
 
                     case CustomerState.Collect:
                         unlockProgressBar.SetActive(false);
-                   // print(target);
+                    target = RoomInstance.customerTarget;
 
                     Movement();
                         break;
@@ -191,7 +192,12 @@ namespace Game.Script.CharacterBrain
         public override void Movement()
         {
             if (customerState != CustomerState.Sleep)
+            {
+                //print(target);
+
                 NavMeshAgent.SetDestination(target.position);
+
+            }
         }
 
         float progress = 0f;
@@ -213,7 +219,7 @@ namespace Game.Script.CharacterBrain
         public void roomAloted(Transform room)
         {
             RoomInstance = room.GetComponent<Room>();
-            target = RoomInstance.customerTarget;
+            //print(target);
             IsroomAloted = true;
         }
 
