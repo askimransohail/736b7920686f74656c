@@ -94,6 +94,8 @@ public class Room : MonoBehaviour
         {
             print(count);
             updateRoomStates(RoomState.available);
+            Tutorial.Ins.CameraSwitch();
+
             count = 0;
         }
         

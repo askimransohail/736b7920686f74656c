@@ -362,7 +362,6 @@ GameObject:
   - component: {fileID: 2326904284778258307}
   - component: {fileID: 2326904284778258309}
   - component: {fileID: 2326904284778258424}
-  - component: {fileID: 2326904284778258310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -475,18 +474,6 @@ MonoBehaviour:
   ikLeftHand: {fileID: 7470489094681767456}
   ikRightHand: {fileID: 5257957967706027817}
   stackItemsList: []
---- !u!114 &2326904284778258310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2326904284778258304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456e59a908b8f9a43861a577e4310bb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2326904284568509128
 PrefabInstance:
   m_ObjectHideFlags: 0

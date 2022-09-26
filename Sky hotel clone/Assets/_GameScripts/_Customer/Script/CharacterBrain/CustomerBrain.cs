@@ -130,11 +130,12 @@ namespace Game.Script.CharacterBrain
         {
             customerState = CustomerState.Nothing;
             Animator.SetBool("sleep", false);
-
+            
             transform.DOMove(RoomInstance.customerTarget.position, 1f).OnComplete(() =>
             {
                 RoomInstance.GetComponent<Room>().updateRoomStates(RoomState.dirty);
                 FindWashroom();
+                Tutorial.Ins.CameraSwitch();
             });
 
         }
@@ -154,8 +155,11 @@ namespace Game.Script.CharacterBrain
         {
             GetComponent<Rigidbody>().isKinematic = false;
             Animator.SetBool("pee", false);
-            ToiletInstance.GetComponent<Toilets>().updateToiletStates(ToiletState.OutOfService);
-            customerState = CustomerState.Destroy;
+            if (ToiletInstance != null)
+            {
+                ToiletInstance.GetComponent<Toilets>().updateToiletStates(ToiletState.OutOfService);
+            }
+                customerState = CustomerState.Destroy;
             target = destroyZone;
 
         }
@@ -226,8 +230,15 @@ namespace Game.Script.CharacterBrain
         public void FindWashroom()
         {
             ToiletInstance = WashroomManagement.Ins.IsToiletAvailable();
-            target = ToiletInstance.GetComponent<Toilets>().PeePoint;
-            customerState = CustomerState.washroom;
+            print(ToiletInstance);
+            if (ToiletInstance != null)
+            {
+                target = ToiletInstance.GetComponent<Toilets>().PeePoint;
+                customerState = CustomerState.washroom;
+
+            }
+            else
+                BackToHome();
         }
 
         private void OnTriggerEnter(Collider other)

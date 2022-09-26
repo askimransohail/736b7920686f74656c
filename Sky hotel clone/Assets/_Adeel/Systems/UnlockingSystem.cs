@@ -23,16 +23,17 @@ namespace _Adeel.Systems
     {
         [SerializeField] private string prefKey;
         [SerializeField] private GameObject unlockProgressObj;
-        [SerializeField] private GameObject unlockItemPrefab;
+        [SerializeField] private GameObject unlockItemPrefab,CamView;
         [SerializeField] private SpriteRenderer progressBar;
         [SerializeField] private TextMeshPro txtUnlockPrice;
         [SerializeField] private int unlockPrice, unlockRemainPrice;
-        [SerializeField] private float unlockIterationDelay = 0.1f, trigStayDelay = 0.5f;
+        [SerializeField] private float unlockIterationDelay = 0.1f, trigStayDelay = 0.5f, UnlockNewPrefabDely=4f,
+            CamEnableDelay=2f;
         private bool isUnlocked, isInTrigArea;
 
         [SerializeField] private Collider trigCollider;
 
-        public UnityEvent OnUnlock;
+        public UnityEvent OnUnlock,NewUnlockingObj;
 
         // [Range(0, 1)][SerializeField] private float testProgress;
 
@@ -50,6 +51,8 @@ namespace _Adeel.Systems
                 unlockRemainPrice = PlayerPrefs.GetInt(prefKey + "_remainPrice", unlockPrice);
                 txtUnlockPrice.text = unlockRemainPrice.ToString("00");
                 UnlockProgress();
+                Invoke("CamEnable", CamEnableDelay);
+
             }
         }
 
@@ -58,6 +61,16 @@ namespace _Adeel.Systems
             // progressBar.material.SetFloat(Arc1, 360f - testProgress * 360f);
         }
 
+        void CamOff()
+        {
+            CamView.SetActive(false);
+        }
+        void CamEnable()
+        {
+            CamView.SetActive(true);
+            Invoke("CamOff", CamEnableDelay);
+
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (!other.TryGetComponent(out PlayerMovement playerMovement) || isUnlocked) return;
@@ -111,14 +124,16 @@ namespace _Adeel.Systems
         {
             unlockProgressObj.SetActive(false);
             unlockItemPrefab.SetActive(true);
+            CamOff();
             if (trigCollider != null)
             {
                 trigCollider.enabled = false;
             }
             OnUnlock?.Invoke();
             RoomManagement.Instance.createRoomList();
-            //WashroomManagement.Ins.createWashroomList();
-
+            
+            Tutorial.Ins.CameraSwitch();
+            Invoke("EnableUnlockingPrefab", UnlockNewPrefabDely);
         }
 
         public void UnlockItem()
@@ -128,5 +143,13 @@ namespace _Adeel.Systems
             // GameObject item = Instantiate(unlockItemPrefab, transform.position + (Vector3.up * 0.25f), Quaternion.identity);
             unlockItemPrefab.transform.DOScale(0f, 0.5f).From().SetEase(Ease.OutBounce).SetDelay(0.25f);
         }
+        public void EnableUnlockingPrefab()
+        {
+            //print(PlayerPrefs.GetInt("tutorial"));
+            //if(PlayerPrefs.GetInt("tutorial")==1)
+            NewUnlockingObj?.Invoke();
+        }
+
+
     }
 }

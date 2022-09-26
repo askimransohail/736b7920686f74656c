@@ -14,7 +14,7 @@ namespace _Adeel.Managers
             {
                 cam.Priority = 10;
             }
-            Cams[camIndex].Priority = 20;
+            Cams[camIndex].Priority = 12;
         }
     }
 }

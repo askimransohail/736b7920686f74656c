@@ -26,7 +26,7 @@ public class Dollar : MonoBehaviour
     {
        
         
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(.5f);
 
         //Transform DollarPosition = DollarPlace.GetChild(DollarPlaceIndex);
         //GameObject NewDollar = Instantiate(dollar);

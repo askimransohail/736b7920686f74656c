@@ -29,6 +29,7 @@ public class WorkerAI : Singleton<WorkerAI>
     {
         Rooms = RoomManagement.Instance;
         workerAnim = workerAnim.GetComponent<Animator>();
+        UpdateWorkerStates(WorkerState.Free);
     }
     void Start()
     {
@@ -37,7 +38,7 @@ public class WorkerAI : Singleton<WorkerAI>
             if (room.GetComponent<Room>().roomState == RoomState.dirty)
                 AddWorkingList(room);
         }
-        UpdateWorkerStates(WorkerState.Free);
+        
     }
 
 
@@ -76,7 +77,7 @@ public class WorkerAI : Singleton<WorkerAI>
         if (WorkerAIList.Count != 0)
         {
             target = WorkerAIList[0].GetComponent<Room>().dirtyThings[WorkerAIList[0].GetComponent<Room>().count].transform;
-            print(target);
+          //  print(target);
 
         }
 
