@@ -17,7 +17,8 @@ public class RoomAlotManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ReceptionZone.instance.isCustomerInReceptionZone &&  ReceptionZone.instance.isPlayerInReceptionZone)
+        if((ReceptionZone.instance.isPlayerInReceptionZone || ReceptionZone.instance.isReceptionistInReceptionZone) 
+            && ReceptionZone.instance.isCustomerInReceptionZone)
         {
             Transform room=RoomManagement.Instance.IsroomAvailable();
            // print(room);
